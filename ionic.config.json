@@ -1,0 +1,7 @@
+{
+  "name": "chocolateApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
