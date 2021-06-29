@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,32 +8,13 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  productos: any = [
-    {
-      nombre: 'Chocolate crema de Maní y Leche'
-    },
-    {
-      nombre: 'Chocolate y Ron 70%'
-    },
-    {
-      nombre: 'Chocolate Oscuro 61.9%'
-    },
-    {
-      nombre: 'Chocolate Leche y Café'
-    },
-    {
-      nombre: 'Chocolate Leche y Menta'
-    },
-    {
-      nombre: 'Chocolate Dulce de Leche'
-    },
-    {
-      nombre: 'Chocolate Leche y Galleta'
-    }
-]
+  productos: any;
 
+  constructor( private _dataService: DataService) {
+    this.productos = this._dataService.setData();
+  }
 
-
-  constructor() {}
-
+  verProducto(index: number) {
+    this._dataService.productoSeleccionado = index;
+  }
 }
