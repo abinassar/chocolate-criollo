@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { DataService } from '../services/data-service.service';
+import { ProductFormPage } from '../shared/pages/product-form/product-form.page';
 
 @Component({
   selector: 'app-producto',
@@ -21,11 +22,11 @@ export class ProductoPage implements OnInit {
   
 
   constructor( private _dataService: DataService,
-               public _toastController: ToastController) {}
+               public _toastController: ToastController,
+               public _modalController: ModalController) {}
 
   ngOnInit() {
     this.productos = this._dataService.setData();
-    console.log(this.producto);
     if (this.producto) {
       this.producto = this.productos[this._dataService.productoSeleccionado];
     }
@@ -40,13 +41,16 @@ export class ProductoPage implements OnInit {
     this.cantidadProducto -= 1;
   }
 
-    async orderProduct() {
-      const toast = await this._toastController.create({
-        message: 'Producto Agregado!',
-        duration: 2000,
-        color: "success"
-      });
-      toast.present();
-    }
+    async openModalForm() {
+    const modal = await this._modalController.create({
+      component: ProductFormPage,
+      componentProps: {
+        'productName': this.producto.nombre,
+        'productQuantity': this.cantidadProducto,
+      }
+    });
+    return await modal.present();
+
+  }
 
 }

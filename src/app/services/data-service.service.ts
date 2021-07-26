@@ -73,11 +73,17 @@ export class DataService {
     }
 ]
 
+  
+
   productoSeleccionado: number;
 
   constructor() { }
 
   setData(){
     return this.productos;
+  }
+
+  setOrder(name:string, quantity: number, product) {
+
   }
 }

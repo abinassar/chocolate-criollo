@@ -8,6 +8,10 @@ const routes: Routes = [
   },  {
     path: 'producto',
     loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
+  },
+  {
+    path: 'product-form',
+    loadChildren: () => import('./shared/pages/product-form/product-form.module').then( m => m.ProductFormPageModule)
   }
 
 ];
