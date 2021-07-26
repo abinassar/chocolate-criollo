@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProductoPageRoutingModule } from './producto-routing.module';
 
 import { ProductoPage } from './producto.page';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductoPageRoutingModule
+    ProductoPageRoutingModule,
+    FlexLayoutModule
   ],
   declarations: [ProductoPage]
 })

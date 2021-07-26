@@ -16,27 +16,33 @@
 
 <ion-content>
 
-  <div class="background-chocolate">
+  <div ngClass.xs="background-chocolate-xs"
+       ngClass.sm="background-chocolate">
     <img [src]="producto.img" class="chocolate-thumbstail">
   </div>
   <div>
-      <ion-card class="card-description">
+      <ion-card ngClass.xs="card-description-xs"
+                ngClass.sm="card-description">
         <ion-card-header>
-          <ion-card-subtitle class="text-end">Descripción</ion-card-subtitle>
-          <ion-card-title class="text-end">{{producto.nombre}}</ion-card-title>
+          <ion-card-subtitle ngClass.xs="text-center"
+                             ngClass.sm="text-end">Descripción</ion-card-subtitle>
+          <ion-card-title ngClass.xs="text-center"
+                          ngClass.sm="text-end">{{producto.nombre}}</ion-card-title>
         </ion-card-header>
       
-        <ion-card-content class="text-end">
+        <ion-card-content ngClass.xs="text-center"
+                          ngClass.sm="text-end">
           Keep close to Nature's heart... and break clear away, once in awhile,
           and climb a mountain or spend a week in the woods. Wash your spirit clean.
   
           <ion-item>
-            <ion-label class="text-end fs-30">
+            <ion-label ngClass.xs="text-center"
+                       ngClass.sm="text-end fs-30">
               Cantidad:
             </ion-label>
           </ion-item>
   
-          <ion-grid class="mt-20" class="ion-align-items-center">
+          <ion-grid fxShow.xs="false" class="mt-20" class="ion-align-items-center">
             <ion-row class="ion-align-items-center ion-justify-content-end">
               <ion-button color="light" (click)="decreaseQuantity()">
                 <ion-icon name="arrow-back-outline" size="large"></ion-icon>
@@ -48,12 +54,28 @@
               <ion-button color="success" (click)="orderProduct()">Ordenar</ion-button>
             </ion-row>
           </ion-grid>        
+          <ion-grid fxHide="true"
+                    fxHide.xs="false" 
+                    class="ion-align-items-center">
+            <ion-row class="ion-align-items-center ion-justify-content-center">
+              <ion-button color="light" (click)="decreaseQuantity()">
+                <ion-icon name="arrow-back-outline" size="large"></ion-icon>
+              </ion-button>
+              <ion-button color="light" class="mr-20" (click)="increaseQuantity()">
+                <ion-icon name="arrow-forward-outline" size="large"></ion-icon>
+              </ion-button>
+              <ion-badge color="light" class="quantity-badge mr-20">{{cantidadProducto}}</ion-badge>
+            </ion-row>
+            <ion-row class="ion-align-items-center ion-justify-content-center mt-20">
+              <ion-button color="success" (click)="orderProduct()">Ordenar</ion-button>
+            </ion-row>
+          </ion-grid>   
         </ion-card-content>
       </ion-card>
   </div>
 
 
-  <ion-text class="text-center">
+  <!-- <ion-text class="text-center">
     <h1>Más Sabores</h1>
   </ion-text>
 
@@ -78,7 +100,7 @@
     </ion-slide>
 
 
-  </ion-slides>
+  </ion-slides> -->
 
   </ion-content>
 

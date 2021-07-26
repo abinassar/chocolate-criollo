@@ -5,27 +5,33 @@
     background-image: url("../../assets/images/cacao-background.jpg");
     background-position: center;
     height: 200px;
+    img {
+        transform: translateY(32%);
+        height: 250px;
+    }
 }
 
-.background-chocolate-sm {
+.background-chocolate-xs {
     background-image: url("../../assets/images/cacao-background.jpg");
     background-position: center;
-    height: 200px;
+    height: 150px;
     img {
         width: auto;
+        transform: translateY(20%);
+        height: 250px;
         margin: auto;
         display: block;
     }
 }
 
-.chocolate-thumbstail {
-    transform: translateY(32%);
-    height: 250px;
-}
-
 .card-description {
     width: calc(100% - 250px);
     margin-left: 240px;
+}
+
+.card-description-xs {
+    width: auto;
+    margin-top: 150px;
 }
 
 .quantity-badge {
