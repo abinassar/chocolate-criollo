@@ -5,16 +5,18 @@
       <ion-back-button defaultHref="home">
       </ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end"
+                 class="mr-minus-20">
       <ion-button defaultHref="home">
         <img src="../../assets/images/Logo-Criollo-Chocolate-2.png" 
              class="header-logo">
       </ion-button>
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+      <ion-button (click)="onClick()"
+                  class="shopping-car">
         <ion-icon name="basket" size="large"></ion-icon>
-        <ion-badge color="primary" 
+        <ion-badge color="warning" 
                    mode="ios" 
-                   class="">42</ion-badge>
+                   class="shop-car-badge">42</ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -57,7 +59,7 @@
                 <ion-icon name="arrow-forward-outline" size="large"></ion-icon>
               </ion-button>
               <ion-badge color="light" class="quantity-badge mr-20">{{cantidadProducto}}</ion-badge>
-              <ion-button color="success" (click)="openModalForm()">Ordenar</ion-button>
+              <ion-button color="warning" (click)="openModalForm()">Ordenar</ion-button>
             </ion-row>
           </ion-grid>        
           <ion-grid fxHide="true"
@@ -73,7 +75,7 @@
               <ion-badge color="light" class="quantity-badge mr-20">{{cantidadProducto}}</ion-badge>
             </ion-row>
             <ion-row class="ion-align-items-center ion-justify-content-center mt-20">
-              <ion-button color="success" (click)="openModalForm()">Ordenar</ion-button>
+              <ion-button color="warning" (click)="openModalForm()">Ordenar</ion-button>
             </ion-row>
           </ion-grid>   
         </ion-card-content>

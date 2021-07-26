@@ -41,6 +41,10 @@
     margin-right: 20px;
 }
 
+.mr-minus-20 {
+    margin-right: -20px !important;
+}
+
 .pb-40 {
     padding-top: 40px !important;
 }
@@ -72,4 +76,9 @@
 
 ion-card .ios .hydrated {
     overflow: visible !important;
+}
+
+.shop-car-badge {
+    transform: translate(-60%, -50%) !important;
+    font-size: 9px !important;
 }
