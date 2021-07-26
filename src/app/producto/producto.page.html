@@ -17,7 +17,6 @@
 <ion-content>
 
   <div class="background-chocolate">
-    <!-- <img src="../../assets/images/paisaje-purpura.jpg" alt=""> -->
     <img [src]="producto.img" class="chocolate-thumbstail">
   </div>
   <div>
@@ -39,14 +38,14 @@
   
           <ion-grid class="mt-20" class="ion-align-items-center">
             <ion-row class="ion-align-items-center ion-justify-content-end">
-              <ion-button color="light">
+              <ion-button color="light" (click)="decreaseQuantity()">
                 <ion-icon name="arrow-back-outline" size="large"></ion-icon>
               </ion-button>
-              <ion-button color="light" class="mr-20">
+              <ion-button color="light" class="mr-20" (click)="increaseQuantity()">
                 <ion-icon name="arrow-forward-outline" size="large"></ion-icon>
               </ion-button>
-              <ion-badge color="light" class="quantity-badge mr-20">11</ion-badge>
-              <ion-button color="success">Ordenar</ion-button>
+              <ion-badge color="light" class="quantity-badge mr-20">{{cantidadProducto}}</ion-badge>
+              <ion-button color="success" (click)="orderProduct()">Ordenar</ion-button>
             </ion-row>
           </ion-grid>        
         </ion-card-content>
@@ -54,11 +53,32 @@
   </div>
 
 
-    <div>
-      <ion-item>
-        <ion-label>Default Item</ion-label>
-      </ion-item>
-    </div>
+  <ion-text class="text-center">
+    <h1>Más Sabores</h1>
+  </ion-text>
+
+  <ion-slides pager="true" class="slide-full">
+
+    <ion-slide *ngFor="let producto of productos">
+
+      <ion-card>
+
+        <img [src]="producto.img" class="slide-image">
+
+        <ion-card-header>
+          <ion-card-title> {{producto.nombre}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="">
+          {{producto.mensaje}}
+        </ion-card-content>
+
+
+      </ion-card>
+
+    </ion-slide>
+
+
+  </ion-slides>
 
   </ion-content>
 

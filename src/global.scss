@@ -41,6 +41,10 @@
     margin-right: 20px;
 }
 
+.pb-40 {
+    padding-top: 40px !important;
+}
+
 .fs-20 {
     font-size: 20px;
 }
@@ -64,4 +68,8 @@
 
 .text-end {
     text-align: end;
+}
+
+ion-card .ios .hydrated {
+    overflow: visible !important;
 }
