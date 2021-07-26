@@ -16,9 +16,15 @@ export class ProductoPage implements OnInit {
     speed: 400
   };
 
+  
+
   constructor( private _dataService: DataService) {
     this.productos = this._dataService.setData();
-    this.producto = this.productos[this._dataService.productoSeleccionado];
+    console.log(this.producto)
+    if (this.producto) {
+      this.producto = this.productos[this._dataService.productoSeleccionado];
+    }
+    this.producto = this.productos[1];
    }
 
   ngOnInit() {

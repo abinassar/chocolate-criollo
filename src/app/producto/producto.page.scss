@@ -1,0 +1,22 @@
+
+
+
+.background-chocolate {
+    background-image: url("../../assets/images/cacao-background.jpg");
+    background-position: center;
+    height: 200px;
+}
+
+.chocolate-thumbstail {
+    transform: translateY(32%);
+    height: 250px;
+}
+
+.card-description {
+    width: calc(100% - 250px);
+    margin-left: 240px;
+}
+
+.quantity-badge {
+    font-size: 30px;
+}

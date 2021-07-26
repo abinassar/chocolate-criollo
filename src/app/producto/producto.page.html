@@ -1,26 +1,76 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>producto</ion-title>
+    <ion-title>{{producto.nombre}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home">
       </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button defaultHref="home">
+        <img src="../../assets/images/Logo-Criollo-Chocolate-2.png" 
+             class="header-logo">
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <div *ngIf="this.producto">Este es el número {{producto.nombre}}</div>
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
-      <h1>Slide 1</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 3</h1>
-    </ion-slide>
-  </ion-slides>
+  <div class="background-chocolate">
+    <!-- <img src="../../assets/images/paisaje-purpura.jpg" alt=""> -->
+    <img [src]="producto.img" class="chocolate-thumbstail">
+  </div>
+  <div>
+      <ion-card class="card-description">
+        <ion-card-header>
+          <ion-card-subtitle class="text-end">Descripción</ion-card-subtitle>
+          <ion-card-title class="text-end">{{producto.nombre}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content class="text-end">
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+  
+          <ion-item>
+            <ion-label class="text-end fs-30">
+              Cantidad:
+            </ion-label>
+          </ion-item>
+  
+          <ion-grid class="mt-20" class="ion-align-items-center">
+            <ion-row class="ion-align-items-center ion-justify-content-end">
+              <ion-button color="light">
+                <ion-icon name="arrow-back-outline" size="large"></ion-icon>
+              </ion-button>
+              <ion-button color="light" class="mr-20">
+                <ion-icon name="arrow-forward-outline" size="large"></ion-icon>
+              </ion-button>
+              <ion-badge color="light" class="quantity-badge mr-20">11</ion-badge>
+              <ion-button color="success">Ordenar</ion-button>
+            </ion-row>
+          </ion-grid>        
+        </ion-card-content>
+      </ion-card>
+  </div>
 
-</ion-content>
+
+    <div>
+      <ion-item>
+        <ion-label>Default Item</ion-label>
+      </ion-item>
+    </div>
+
+  </ion-content>
+
+
+<!-- 
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text color="primary">
+          <h1>MÁS SABORES</h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+

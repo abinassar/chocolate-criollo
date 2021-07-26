@@ -1,8 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Productos
+      Chocolate Criollo
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button defaultHref="home">
+        <img src="../../assets/images/Logo-Criollo-Chocolate-2.png" 
+             class="header-logo">
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -22,7 +28,7 @@
       <ion-col size="12" size-sm="4" *ngFor="let producto of productos ; let i = index" >
         <ion-card routerLink="/producto" (click)="verProducto(i)">
           <ion-card-header>
-            <img src="https://prueba.vnzservers.com/chocolate-criollo/wp-content/uploads/2021/04/0.png" alt="">
+            <img [src]="producto.img" alt="">
           </ion-card-header>
         
           <ion-card-content>
