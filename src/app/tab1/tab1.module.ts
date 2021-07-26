@@ -6,6 +6,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CutLetterPipe } from '../shared/pipes/cut-letter.pipe';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -15,8 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    FlexLayoutModule
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page,CutLetterPipe]
 })
 export class Tab1PageModule {}

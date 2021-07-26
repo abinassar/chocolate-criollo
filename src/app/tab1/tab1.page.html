@@ -31,14 +31,22 @@
             <img [src]="producto.img" alt="">
           </ion-card-header>
         
-          <ion-card-content>
+          <ion-card-content ngClass.sm="center-content"
+                            ngClass.xs="center-content-xs">
 
-            <ion-card-title class="titulo-producto text-center mb-10">{{producto.nombre}}</ion-card-title>
+            <ion-card-title class="titulo-producto 
+                                   text-center 
+                                   mb-10">
+                                   <div class="text">
+                                     {{producto.nombre}}
+                                   </div>
+                                  </ion-card-title>
             <div class="fila-disponible">
               <ion-badge color="success">Disponible</ion-badge>
               <ion-badge color="warning">10$</ion-badge>
             </div>
-            <ion-card-subtitle>Keep close to Nature's heart... and break clear away, once in awhile</ion-card-subtitle>
+            <ion-card-subtitle class="text-justify"
+            >{{producto.mensaje | cutLetter}}</ion-card-subtitle>
             
           </ion-card-content>
         </ion-card>
